@@ -7,6 +7,13 @@ export const Container = styled.div`
   gap: 1.25rem;
   padding: 2rem;
   border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &:hover {
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.blue};
+    animation: pulse 0.5s;
+  }
 
   h2 {
     color: ${({ theme }) => theme['base-title']};

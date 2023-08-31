@@ -6,7 +6,7 @@ export const Container = styled.div`
   gap: 0.5rem;
   padding: 0.22rem;
   color: ${({ theme }) => theme.blue};
-  line-height: 0;
+  line-height: 100%;
   border: 1px solid transparent;
   cursor: pointer;
 
