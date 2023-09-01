@@ -21,5 +21,6 @@ module.exports = {
       "semi": false,
       "trailingComma": "none"
     }],
+    "@typescript-eslint/no-explicit-any": "warn"
   },
 }
