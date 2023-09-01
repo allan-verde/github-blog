@@ -18,6 +18,13 @@ export class IssuesService {
     )
     return response.data
   }
+
+  async getById(id: string, username: string, repository: string) {
+    const response = await this.axios.get(
+      `repos/${username}/${repository}/issues/${id}`
+    )
+    return response.data
+  }
 }
 
 export const issuesService = new IssuesService(axios)

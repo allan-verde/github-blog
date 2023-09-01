@@ -1,19 +1,32 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import {
+  faArrowUpRightFromSquare,
+  faChevronLeft
+} from '@fortawesome/free-solid-svg-icons'
 
 import { Container } from './styles'
 
-export const Link = ({
-  children,
-  ...rest
-}: React.DetailedHTMLProps<
+type LinkProps = React.DetailedHTMLProps<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
->) => {
+> & {
+  preffix?: boolean
+  suffix?: boolean
+}
+
+export const Link = ({
+  children,
+  preffix = false,
+  suffix = false,
+  ...rest
+}: LinkProps) => {
   return (
     <Container>
+      {preffix && <FontAwesomeIcon icon={faChevronLeft} fontSize={12} />}
       <a {...rest}>{children}</a>
-      <FontAwesomeIcon icon={faArrowUpRightFromSquare} fontSize={12} />
+      {suffix && (
+        <FontAwesomeIcon icon={faArrowUpRightFromSquare} fontSize={12} />
+      )}
     </Container>
   )
 }

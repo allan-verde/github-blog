@@ -19,7 +19,7 @@ type User = {
 }
 
 export type Issue = {
-  id: number
+  number: number
   title: string
   body: string
   created_at: string
@@ -40,14 +40,16 @@ export const Home = () => {
     )
 
     setIssues(
-      responseIssues.items.map((item: any) => ({
-        id: item.id,
-        title: item.title,
-        body: item.body,
-        created_at: item.created_at,
-        updated_at: item.updated_at,
-        url: item.url
-      }))
+      responseIssues.items.map(
+        (item: any): Issue => ({
+          number: item.number,
+          title: item.title,
+          body: item.body,
+          created_at: item.created_at,
+          updated_at: item.updated_at,
+          url: item.url
+        })
+      )
     )
   }, [])
 
@@ -130,7 +132,7 @@ export const Home = () => {
 
         <div className="content">
           {issues !== null
-            ? issues.map((issue) => <Card key={issue.id} issue={issue} />)
+            ? issues.map((issue) => <Card key={issue.number} issue={issue} />)
             : null}
         </div>
       </Publications>

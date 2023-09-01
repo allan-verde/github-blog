@@ -24,7 +24,7 @@ export const Card = ({ issue }: CardProps) => {
   )
 
   const handleNavigateToIssue = () => {
-    navigate(`/issue/${issue.id}`)
+    navigate(`/issue/${issue.number}`)
   }
 
   return (
