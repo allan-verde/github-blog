@@ -34,7 +34,7 @@ export const Card = ({ issue }: CardProps) => {
         <span>{time}</span>
       </div>
       <LinesEllipsis
-        text={issue.body}
+        text={issue.body || ''}
         maxLine="4"
         ellipsis="..."
         trimRight
